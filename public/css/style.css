@@ -1,0 +1,274 @@
+/*
+ * Projet: 
+ * Auteur: Orange-RDC
+ * Date: 1e 02/07/2018
+ */
+
+@keyframes rotation {
+  0%{ transform: rotate(0deg); }
+  100%{ transform: rotate(360deg); }
+}
+
+@-webkit-keyframes rotation {
+  0%{ transform: rotate(0deg); }
+  100%{ transform: rotate(360deg); }
+}
+
+body {
+  font-size: .875rem;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+.separat {
+  color: #ff6600;
+  padding-bottom:  27px;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 48px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+/*
+ * Content
+ */
+
+[role="main"] {
+  padding-top: 48px; /* Space for fixed navbar */
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+/*
+ * Utilities
+ */
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+/*
+ * Logo
+ */
+.colorLogo {
+  color: #ff6600;
+}
+
+.active {
+  color: #ff6600;
+}
+
+/* 
+ * Formulaire
+ */
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input {
+  margin-bottom: 10px;
+  border-radius: 0;
+  border-radius: 0;
+}
+
+select {
+  margin-bottom: 10px;
+  border-radius: 0px;
+}
+
+.btn-warning {
+  color: white;
+  background: #ff6600;
+  border-radius: 0px;
+}
+.form-group {
+  text-align: left;
+}
+
+/* 
+ * Loader 
+ */
+
+.popup-wrapper {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(255,255,255,.7);
+  /*transform: scale(0);
+  -webkit-transform: scale(0);
+  */
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  z-index: 3;
+  display: none;
+}
+
+.loader-text {
+  position: absolute;
+  top: 50%; left: 1%; right: 1%;
+  display: inline-block;
+  padding: 20px;
+  color: black;
+  /*background: #fff;
+  box-shadow: 0 1px 5px rgba(0,0,0,.5);
+  border-radius: 5px;*/
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+.loader-icon img {
+  margin-right: 10px;
+  animation: rotation 1s linear infinite;
+  -webkit-animation: rotation 1s linear infinite;
+  /*transition: all .3s infinite;*/
+}
+
+/* 
+ * Message résultat opération 
+ */
+
+.popup-msg {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(255,255,255,.7);
+  /*transform: scale(0);
+  -webkit-transform: scale(0);
+  */
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  z-index: 5;
+}
+
+.loader-text-msg {
+  position: absolute;
+  top: 30%; left: 0%; right: 0%;
+  display: inline-block;
+  padding: 20px;
+  /*color: #65affd;*/
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0,0,0,.5);
+  /*border-radius: 5px;*/
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+.entetetab {
+  background: #ff6600;
+  color: white;
+}
+
+.addUser {
+  background-color: #f8f9fa/*#f5f5f5*/;
+}
+.err {
+  text-align: left;
+  color: #ff6600;
+}
+.active {
+  color: #ff6600;
+}
+.vide {
+  color: #ff6600;
+  text-align: center;
+  padding-top: 20px;
+}
+
